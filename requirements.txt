@@ -1,0 +1,14 @@
+torch
+torchaudio
+numpy
+pyarrow
+sentencepiece
+soundfile
+sounddevice
+pynput
+pywin32; platform_system == "Windows"
+pyperclip
+pyyaml
+matplotlib
+tqdm
+pytest

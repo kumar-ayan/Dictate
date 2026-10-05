@@ -1,0 +1,43 @@
+data:
+  audio_column: null
+  text_column: null
+  max_batch_seconds: 20
+  shuffle_buffer: 128
+  replay_fraction: 0.15
+  dev_fraction: 0.03
+  dev_max_hours: 2
+  seed: 1729
+tokenizer:
+  vocab_size: 3000
+asr:
+  d_model: 512
+  layers: 8
+  heads: 8
+  ff_mult: 4
+  dropout: 0.1
+  gradient_checkpointing: true
+  epochs: 10
+  learning_rate: 0.0005
+  warmup_steps: 1000
+  grad_accum: 4
+  checkpoint_every: 500
+  eval_every_steps: 500
+  stage_lr_scale: 0.3
+  specaugment: 0.5
+cleanup:
+  d_model: 512
+  encoder_layers: 3
+  decoder_layers: 3
+  heads: 8
+  epochs: 10
+  learning_rate: 0.0002
+  max_length: 256
+  batch_size: 32
+  grad_accum: 2
+  warmup_steps: 100
+  checkpoint_every: 100
+  stage_lr_scale: 0.3
+app:
+  hotkey: right_ctrl
+  cleanup: rules
+  dictionary: data/dictionary.txt

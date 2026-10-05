@@ -1,0 +1,1032 @@
+{
+  "rows": [
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 0,
+      "row_offset": 168,
+      "duration": 11.198,
+      "text": "छब्बीस जनवरी उन्नीस सौ बहत्तर पन्द्रह अगस्त उन्नीस सौ अस्सी चौदह जनवरी उन्नीस सौ पचास सत्रह अक्टूबर उन्नीस सौ",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 0,
+      "row_offset": 169,
+      "duration": 5.284,
+      "text": "नब्बे छह मार्च उन्नीस सौ एका एकासी",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 0,
+      "row_offset": 283,
+      "duration": 5.488,
+      "text": "हाँ कृपया अंदर आएँ बताएँ क्या हुआ क्या अब कोई गंभीर बात है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 0,
+      "row_offset": 571,
+      "duration": 2.787,
+      "text": "सर मेरी बात प्रिंसी के इस्कूल से हो रही है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 0,
+      "row_offset": 572,
+      "duration": 15.136,
+      "text": "हाँ सर मैं ये आपको बताना सूचित करना चाहती हूँ कि मैं मतलब हम लोग सभी घर से जा रहे है कहीं बाहर घूमने पाँच छः दिन का प्लान है हमारा घूमने के लिए बाहर तो मैं वहाँ से छुट्टी लेना चाहती हूँ",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 0,
+      "row_offset": 573,
+      "duration": 4.192,
+      "text": "सर पाँच से छः दिन का प्लान है तो सात या आठ दिन की छुट्टी चाहिए सर",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 0,
+      "row_offset": 574,
+      "duration": 3.603,
+      "text": "सर हम लोग जम्मू कश्मीर जा रहे सर घूमने के लिए सभी",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 0,
+      "row_offset": 575,
+      "duration": 5.055,
+      "text": "हाँ सर और घर पर कोई भी नहीं रहेगा इसलिए उसे अकेला छोड़ भी नहीं सकते",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 0,
+      "row_offset": 578,
+      "duration": 8.158,
+      "text": "और सर इनके इक्ज़ाम वगैरह भी कुछ आने वाले है मैंने ऐसा डायरी में पढ़ा था इनके इस्कूल डायरी में अगर ये कोई इक्ज़ाम",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 0,
+      "row_offset": 579,
+      "duration": 3.327,
+      "text": "सर अभी आने वाले दो दिन बाद से है सर इस्टार्ट",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 0,
+      "row_offset": 581,
+      "duration": 2.367,
+      "text": "हाँ सर हम तब तक के तो आ ही जायेंगे",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 0,
+      "row_offset": 582,
+      "duration": 4.081,
+      "text": "सर इस्कूल कितने बजे आए मतलब टाइम क्या है आने का वहाँ पर",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 0,
+      "row_offset": 583,
+      "duration": 4.107,
+      "text": "हाँ सर जब भी आप थोड़ा समय हो आपके पास तभी देगे सर हम",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 0,
+      "row_offset": 584,
+      "duration": 2.523,
+      "text": "हाँ सर सर वैसे ये पढ़ने में कैसी है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 0,
+      "row_offset": 587,
+      "duration": 2.553,
+      "text": "ठीक है सर थैंक यू आपका बहुत बहुत धन्यवाद",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 0,
+      "row_offset": 986,
+      "duration": 1.995,
+      "text": "पालन",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 212,
+      "duration": 1.081,
+      "text": "पाँच",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 473,
+      "duration": 7.205,
+      "text": "हं ज़्यादातर छोटे बिजनेस में तो हमारे दिमाघ में सबसे पहले वही आता है जैसे परचुनिया वग़ैरह की दुकान होती है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 474,
+      "duration": 5.187,
+      "text": "अपना खाद्य छोटा मोटा मतलब अपना दुकान खोलकर खाद्य सामग्री बेचना",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 475,
+      "duration": 8.712,
+      "text": "यह आटा वग़ैरह का बेचना ये सारे हमारे छोटे बिजनेजे़ज़ में आते हैं लेकिन मुझे जो ख़ास बिजनेस लगता है क्योंकि मैं एक",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 476,
+      "duration": 9.04,
+      "text": "कॉमर्स इस्ट्रीम से हूँ तो मेरे को अकाउंटिंग और यह जी एस टी इनकम टेक्स वग़ैरह में थोड़ा ज़्यादा वह है अपना लगाव है इंट्रस्ट है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 477,
+      "duration": 8.601,
+      "text": "तो इसकी वजह से मुझे जो सबसे ज़्यादा रोचक काम लगता है वह मुझे सी ए फ़ाउंडेशन में ऑडिट का काम लगता है क्योंकि इससे हमारी बहुत ही ज़्यादा",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 478,
+      "duration": 6.122,
+      "text": "नॉलेज होती है और हमें अपने जैसे पैसों के बारे में अच्छा पता चलता है कि हमें किस प्रकार से",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 479,
+      "duration": 10.567,
+      "text": "अपना वर्क करना चाहिए हमारा कैपिटल कितना होना चाहिए हमारा अमाउन्ट कितना होना चाहिए और हमें किस तरीक़े से पेमेंट करना चाहिए जिसे हमें आगे भविष्य में दिक़्क़त ना हो",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 480,
+      "duration": 4.8589375,
+      "text": "और हमें किस किस प्रकार से अपने मतलब वह वेवसाय को आगे बढ़ाने के लिए",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 481,
+      "duration": 12.525,
+      "text": "क्या क्या तरक़ीब लगानी जैसे कि अपना बाउन्डिंग है अपने क्या बाउन्डिंग होंगे हमें किन नियमों के तय कर काम करना होगा तो इस वजह से मेरे को अपने ये सी ए फ़ाउंडेशन की जो इश्ट्रिम है वह मुझे सबसे अच्छी लगती है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 482,
+      "duration": 12.0809375,
+      "text": "और जिसमें अपना बहुत ही ऐसा कम्पनी का वह भी होता है रजिश्ट्रेसन पैन इंडिया का भी काम होता है बैंकिंग का भी काम होता है तो मेरे को जो सबसे ज़्यादा रुचि है वह एक सी ए फ़ाउंडेशन में है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 533,
+      "duration": 1.101,
+      "text": "ऊपर",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 549,
+      "duration": 6.4,
+      "text": "हमारे यहाँ त्यौहार पर विभिन्न प्रकार की चीजें बनाई जाती हैं हम",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 550,
+      "duration": 21.143,
+      "text": "हिंदू संप्रदाय से आते हैं तो हमारे यहाँ बहुत सारे त्यौहार मनाए जाते हैं जिसमें हम विभिन्न प्रकार की चीजों को पकाते हैं और आसपास के लोगों को भी देते हैं जिसमें हम गूजे पपड़िया लड्डू गुलाब जामुन सलोनी",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 551,
+      "duration": 2.991,
+      "text": "सेव और नमकीन बनाते हैं",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 621,
+      "duration": 12.99,
+      "text": "हाँ जिस प्रकार में यह ग्रामीण क्षेत्र में रेहती हूँ तो यहाँ आए दिन कुछ न कुछ नई नई फ़सलें लगती रहती है जो कि मार्केट में हम बेचते हैं इन सब फ़सलों को",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 622,
+      "duration": 9.472,
+      "text": "लगाने में और इन्हें मार्केट तक पहुँचने में तीन चार महीने या उससे भी ज़्यादा समय लगता है इस समय के दौरान उसमें",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 623,
+      "duration": 7.648,
+      "text": "दवाओं का छिड़काव करना समय समय पर पानी और सबसे बड़ी मुसीबत यह होती है कि उन्हें मौसम से बचाना होता है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 624,
+      "duration": 7.07,
+      "text": "मौसम के आगे हमारी नहीं चलती है और उस वजह से हमें समय से पर उनको बचाने के लिए",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 625,
+      "duration": 12.866,
+      "text": "छिड़काव करने होते हैं दवाइयों के जिससे वह बचते हैं और फिर जब हम उन्हें किसी प्रकार से बड़ा कर लेते हैं और उसमें जब फलियाँ आती है तो हमारे मन बहुत प्रसन्न बहुत खुश हो जाते हैं कि हमारा",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 626,
+      "duration": 12.449,
+      "text": "जो इस पेड़ के प्रति जो कार्य था आज संपन्न हुआ और फिर उन सब चीज़ों को उन सारे फलों को तोड़कर उन्हें बाज़ार में ले जाते हैं लेकिन दुर्घटना यह हो जाती है हमारे संग",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 627,
+      "duration": 5.536,
+      "text": "समस्या है यह कि आज भी हमारे समाज में किसानों को वह लागत",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 628,
+      "duration": 5.056,
+      "text": "वह जो उसका मेहनत है उस आज भी उसे प्राप्त नहीं होता है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 629,
+      "duration": 12.777,
+      "text": "उसको पाने के लिए वह कितनी मेहनत कई महीनों से मेहनत करता है लेकिन जब वह बाज़ार जाता है तो उसके अपने लागत के लिए उतने पैसे अपने वस्तु के लिए नहीं मिलता है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 937,
+      "duration": 2.323,
+      "text": "हैलो",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 938,
+      "duration": 5.391,
+      "text": "जी भैया हमको ना कटहल का बीज लेना है कैसे हैं",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 939,
+      "duration": 3.2890625,
+      "text": "जी हमको हर रेट में लेना है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 940,
+      "duration": 2.37,
+      "text": "कितना है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 941,
+      "duration": 3.526,
+      "text": "जी उससे कम रेंज का नहीं है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 942,
+      "duration": 4.29,
+      "text": "और प्याज़ का बीज",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 943,
+      "duration": 2.454,
+      "text": "कितने का है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 944,
+      "duration": 2.996,
+      "text": "पाँच सौ चालीस रुपये",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 945,
+      "duration": 4.362,
+      "text": "उससे कम रेंज का नहीं है सर ज़्यादा ही रेंज वाला है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 946,
+      "duration": 3.7279375,
+      "text": "इतना कम दस बीस कम नहीं होगा",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 947,
+      "duration": 3.487,
+      "text": "ओके क्या और गोभी का भी",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 948,
+      "duration": 5.674,
+      "text": "जी तो वह हमको पाँच के जी लेना है तो थोड़ा सा कम कर देते",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 949,
+      "duration": 2.641,
+      "text": "कम नहीं होगा",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 950,
+      "duration": 5.985,
+      "text": "ओके तो ठीक है पाँच के जी भिजवा दीजिएगा को भी का बीज",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 951,
+      "duration": 3.235,
+      "text": "और कटहल क्या",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 952,
+      "duration": 4.984,
+      "text": "उसके बाद कटहल का बीज भिजवा दीजिएगा दस के जी",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 953,
+      "duration": 4.9419375,
+      "text": "और प्याज़ का बीज भिजवा दीजिएगा दो के जी",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 954,
+      "duration": 5.5460625,
+      "text": "जी हाँ भिंडी भी लेना है और बैंगन का भी लेना है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 955,
+      "duration": 4.709,
+      "text": "उस सबका कितना रेंज है भिंडी का कितना रेंज है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 956,
+      "duration": 2.8,
+      "text": "और बैंगन का",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 957,
+      "duration": 7.8210625,
+      "text": "ठीक है तो बैंगन का भिजवा दीजिएगा तीन के जी और भिंडी का भिजवा दीजिएगा दू के जी कितना हुआ पेमेंट",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 958,
+      "duration": 4.203,
+      "text": "ठीक है भईया तो भिजवा दीजिएगा हम पैसा पेमेंट कर देंगे",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 959,
+      "duration": 5.554,
+      "text": "नहीं कोई आधा घंटा लेगा सामान आएगा तभी तो पेमेंट करेंगे",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 960,
+      "duration": 3.06,
+      "text": "कितना हुआ है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 961,
+      "duration": 4.4289375,
+      "text": "ठीक है तो पाँच हज़ार पाँच हज़ार ना",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 962,
+      "duration": 6.2940625,
+      "text": "आपको हम और ढाई हज़ार भेज देंगे और ढाई हज़ार आने के बाद भेजेंगे",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 1,
+      "row_offset": 963,
+      "duration": 1.937,
+      "text": "ओके",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 692,
+      "duration": 6.525,
+      "text": "पेप्सी मैक्स ट्वीट्स दो हज़ार एक से बनाया जाने वाला एक प्रकार का पेप्सी मैक्स है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 824,
+      "duration": 8.41,
+      "text": "अच्छा अरे माफ कीजिए भईया ये हो नहीं पाया ना क्योंकि बाकी सिटी भी रिजर्वेशन बाकी है क्या है बाकी लोग की",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 825,
+      "duration": 4.96,
+      "text": "समझो ना भईया की बाकी लोग भी तो बैठे हैं यहाँ पर उनको अगर उठाऊंगा तो वो मुझे बोलेंगे ना",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 826,
+      "duration": 5.273,
+      "text": "नहीं हो पायेगा ना भईया अच्छा किस नंबर किस नंबर वाली सीट पे बैठे हैं आप",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 827,
+      "duration": 6.343,
+      "text": "सात वाली पीछे देखी पीछे वाली सीट में भी दो पीछे वाली सीट में भी तो लोग बैठे है आराम से आपको क्या",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 828,
+      "duration": 2.559,
+      "text": "अच्छा आपकी सीट रिजर्वेशन वाली है क्या",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 829,
+      "duration": 1.833,
+      "text": "अच्छा कितनी रिजर्वेशन वाली हैं",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 830,
+      "duration": 2.162,
+      "text": "अरे नहीं हो पायेगा ना भईया आप समझो",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 832,
+      "duration": 7.064,
+      "text": "आप आप जिस सीट पे बैठे हैं ना भईया और जो सभी वाले बुजुर्गों वाली लाइन में बैठे है ना अब उनको उठाऊंगा तो बिचारे हमको बोलेंगे",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 833,
+      "duration": 2.559,
+      "text": "अच्छा आपको प्रॉब्लम प्रॉब्लम क्या क्या हो रही है बताइए",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 834,
+      "duration": 4.297,
+      "text": "नहीं तो एक काम करो ना तो एक खिड़की लगा लो खिड़की लगा लो ना तो भईया",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 835,
+      "duration": 1.792,
+      "text": "अच्छा आपको जाना आपको जाना कहाँ है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 836,
+      "duration": 2.56,
+      "text": "अरे नहीं आपको जाना कहा है मेंने कहा रूट कहाँ है आपका",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 837,
+      "duration": 1.0459375,
+      "text": "जाना है बहुत दूर",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 838,
+      "duration": 2.752,
+      "text": "भईया मुझे पहले बोलना था आपको जैसे आप जब बैठे रहे तो",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 839,
+      "duration": 2.031,
+      "text": "अरे वो तो कम से कम तीन घंटा लगेगा",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 840,
+      "duration": 1.1360625,
+      "text": "तीन घंटे में",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 841,
+      "duration": 5.439,
+      "text": "अरे एक काम कर लो कि सारे इधर अभी कर लो देखता हूँ मैं आगे अगर कोई",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 842,
+      "duration": 8.267,
+      "text": "आगे आगे कटंगी तक कटंगी तक तो एग्जिस्ट कर लो उसके कटंगी तक एग्जिस्ट कर लो कोई पैसेंजर उतरेगा ना तब मैं आप को वहाँ बिठा दूँगा आपको",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 843,
+      "duration": 2.463,
+      "text": "अरे आपकी प्रॉब्लम समझ रहा हूँ पर क्या बाकी",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 845,
+      "duration": 2.368,
+      "text": "अरे तो भईया उनके साथ भी तो बच्चियाँ बैठी है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 847,
+      "duration": 4.305,
+      "text": "अरे नहीं कर सकते ना भाई तुम समझो पहले आप लो मुझे पहले बोला था ना आपको",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 848,
+      "duration": 7.168,
+      "text": "अरे देखो अरे तो यहाँ बस चल रही है आपका उतार दू जंगल के ये दिया हुआ है ना जंगल का रूट है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 849,
+      "duration": 11.968,
+      "text": "अरे तो सभी लोग पेक है ना सभी बस पेक है एक भी सीट खाली नहीं है समझो थोड़ा सा थोड़ा सा एग्जिस्ट कर लो थोड़ा सा कम से कम पचास किलोमीटर तक एग्जेस्ट कर लो",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 850,
+      "duration": 1.563,
+      "text": "नहीं मैं समझ रहा हूँ बाकी लोग भी",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 851,
+      "duration": 1.888,
+      "text": "अरे कुछ तो होगा आपके पास में",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 852,
+      "duration": 1.9989375,
+      "text": "अगर ज़्यादा प्रॉब्लम हो रही है दवाई अवाई खा लो आप",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 853,
+      "duration": 5.094,
+      "text": "अरे तो मैं वही तो बोल रहा हूँ आपको मैं भी नहीं हो पायेगा ना पूरी सीट रिजर्वेशन वाली है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 854,
+      "duration": 11.392,
+      "text": "अरे समझो ना भईया अरे समझो समझो पूरी पचास की पचास सीट बुक है ना यहाँ पर आपको बैठा लूँ कहाँ बैठा लूँगा आपको और वैसे भी आप उस सीट पर अकेले बैठे हो",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 856,
+      "duration": 9.952,
+      "text": "हाँ हाँ ठीक है ना मैं मैं बस रुक जाओ मैं देख रहा हूँ आपको फिर मैं आपको सीट दिलवा देता हूँ पीछे वाली वो पीछे वाली तो बैठ जाओगे ना आप हाँ ठीक है ठीक है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 857,
+      "duration": 8.584,
+      "text": "ठीक है ना मैं पीछे वाली जो है ना अट्ठारह नंबर की मैं आपको दे देता हूँ ठीक है ठीक ठीक ठीक ठीक जी भईया",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 944,
+      "duration": 4.739,
+      "text": "नमस्ते नमस्ते बोलिए",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 945,
+      "duration": 4.416,
+      "text": "हाँ मुझे स्कूल का ड्रेस सिलवाना था यूनिफार्म",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 946,
+      "duration": 2.918,
+      "text": "तो आप खाली है क्या",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 947,
+      "duration": 3.365,
+      "text": "तो मेरे यहाँ तीन सौ बच्चे हैं",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 948,
+      "duration": 8.646,
+      "text": "तो आप आकर नाप आप ले लीजिए और सिल कर तो कितना होगा मैं आपको कपड़ा दूँगी",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 949,
+      "duration": 4.319,
+      "text": "बच्चे <unintelligible> अलग अलग क्लास के हैं",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 950,
+      "duration": 3.099,
+      "text": "छोटे बच्चों का कितना है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 951,
+      "duration": 2.555,
+      "text": "और बड़े बच्चों का",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 952,
+      "duration": 4.547,
+      "text": "पर मुझे उसका सिलाई परफेक्ट चाहिए",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 953,
+      "duration": 5.419,
+      "text": "तो ऑर्डर कितने दिन में आप लोग कंप्लीट करेंगे",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 954,
+      "duration": 14.304,
+      "text": "नहीं मतलब लड़की लोगों के लिए प पैंट और शर्ट चाहिए और छोट बच्चियों के लिए छोटी लड़कियाँ रहेंगी तो उनके लिए स्कर्ट और शर्ट चाहिए और बड़ी लोग रहेंगी तो उनके लिए सूट सलवार",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 955,
+      "duration": 6.972,
+      "text": "बच्ची हैं छोटे बच्चे है तो उनको हाफ पैंट और शर्ट और बड़े बच्चों को फुल पैंट और शर्ट",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 956,
+      "duration": 3.529,
+      "text": "और फिर",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 957,
+      "duration": 8.51,
+      "text": "वह ज़्यादा मत रखिए क्योंकि मुझे एक दो बच्चों का नहीं सिलवाना कम से कम तीन चार सौ बच्चे मेरे स्कूल में है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 958,
+      "duration": 3.706,
+      "text": "सिलाई मुझे अच्छी चाहिए बस",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 959,
+      "duration": 9.776,
+      "text": "यह ना कीजिए <unintelligible> सिल दें फिर बच्चे के माता पिता लोग आएँ तो ले ही ना बोले ऐसा है वैसा है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 960,
+      "duration": 4.149,
+      "text": "तो आप का दुकान मतलब वो किधर है शॉप",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 961,
+      "duration": 4.056,
+      "text": "आपका दुकान किधर है किस एरिए में पड़ता है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 962,
+      "duration": 8.954,
+      "text": "इससे पहले जो शर्ट रहेगा ना आप मेरे स्कूल में से बैच भी लगा दीजिएगा भारत भारतीय हाई स्कूल के नाम से",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 963,
+      "duration": 5.675,
+      "text": "उसपर फिनिशिंग रहना चाहिए क्योंकि उसपे नाम दिखना चाहिए पूरा",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 964,
+      "duration": 6.7029375,
+      "text": "नहीं नहीं एक महीने में तो स्कूल अभी कुछ दिन में ओपन हो जाएगा दस दिन में तो एक महीने में क्या करूँगी",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 965,
+      "duration": 5.4640625,
+      "text": "हाँ तो आप दर्जी तीन चार रख लीजिए फटाफट मुझे कंप्लीट करके दीजिए",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 966,
+      "duration": 1.659,
+      "text": "ठीक है नमस्ते",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 2,
+      "row_offset": 1074,
+      "duration": 15.14,
+      "text": "मैं अपने आधार विवरण को अद्यतन करना चाहता हूँ मेरा आधार नंबर दो नौ सात शून्य एक दो सात सात सात छः चार शून्य है और ओ टी पी दो सात शून्य आठ है",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 3,
+      "row_offset": 80,
+      "duration": 11.451,
+      "text": "क्या आप संदर्भ संख्या नौ सात तीन आठ सात सात शून्य चार तीन पाँच सात चार का उपयोग करके मेरे जन्म पंजीकरण आवेदन की वर्तमान स्थिति को सत्यापित कर सकते हैं",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 3,
+      "row_offset": 436,
+      "duration": 5.905,
+      "text": "भारत अमेरिका जापान इंग्लैंड फ्रांस",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 4,
+      "row_offset": 291,
+      "duration": 4.618,
+      "text": "क्या आप मेरे ख़रीदारी कार्ट से नवरत्न आयुर्वेदिक कूल ऑयल हटा सकते हैं",
+      "audio_column": "audio_filepath"
+    },
+    {
+      "path": "D:\\Dictate\\data\\parquet\\train-00000-of-00082.parquet",
+      "row_group": 4,
+      "row_offset": 482,
+      "duration": 1.28,
+      "text": "वाह",
+      "audio_column": "audio_filepath"
+    }
+  ],
+  "speakers": [
+    "S4256676600327861",
+    "S4257076900395218",
+    "S4257586100328965",
+    "S4257624700308834",
+    "S4257728700388466",
+    "S4257761400336421",
+    "S4258088700310540",
+    "S4258669300399517",
+    "S4258880700305857",
+    "S4259143500345364",
+    "S4259701900332070",
+    "S4259966300308461",
+    "S4259966900308105"
+  ],
+  "audio_hashes": [],
+  "hours": 0.19694135416666667,
+  "source_shards": [
+    "train-00000-of-00082.parquet"
+  ]
+}

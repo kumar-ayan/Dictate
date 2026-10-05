@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Checkpoints
+checkpoints/
+*.ckpt
+*.pt
+*.pth
+
+# Training runs
+data/parquet/
+runs/
+
+# Registry
+registry.db
+registry.db-*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Build
+dist/
+build/
+*.egg-info/

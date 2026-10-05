@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nirmiti-dictate"
+version = "0.1.0"
+description = "From-scratch Hindi speech dictation toolkit"
+requires-python = ">=3.11"
+dependencies = ["torch", "torchaudio", "numpy", "pyarrow", "sentencepiece", "soundfile", "sounddevice", "pynput", "pywin32; platform_system == 'Windows'", "pyperclip", "pyyaml", "matplotlib", "tqdm"]
+
+[tool.setuptools.packages.find]
+include = ["dictate*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
