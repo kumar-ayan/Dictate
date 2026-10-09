@@ -22,6 +22,23 @@ def _file_hash(path):
         for block in iter(lambda:f.read(1<<20),b""): h.update(block)
     return h.hexdigest()
 
+def _chunked_model_output(wave,model,device,log_mel):
+    # Attention uses O(T^2) memory. Keep each utterance bounded even when
+    # the hotkey is held or the browser tester records for a long time.
+    chunk_samples=10*16000; stride_samples=9*16000; overlap_frames=13
+    outputs=[]
+    for start in range(0,wave.numel(),stride_samples):
+        end=min(wave.numel(),start+chunk_samples)
+        feature=log_mel(wave[start:end],16000,device=device).transpose(0,1).unsqueeze(0)
+        lengths=torch.tensor([feature.shape[1]],device=device)
+        with torch.inference_mode(), torch.autocast(device_type="cuda",dtype=torch.bfloat16,enabled=device=="cuda"):
+            chunk=model(feature,lengths)[0]
+        left=overlap_frames if start else 0
+        right=chunk.shape[0]-overlap_frames if end<wave.numel() else chunk.shape[0]
+        outputs.append(chunk[left:right].float().cpu())
+        if end==wave.numel(): break
+    return torch.cat(outputs,dim=0)
+
 def _load_asr(device,sp):
     from .. import registry
     from ..asr.model import ConformerCTC
@@ -36,8 +53,7 @@ def _load_asr(device,sp):
         wave=torch.as_tensor(np.asarray(audio,dtype=np.float32),device="cpu")
         if wave.numel()==0: return ""
         from ..data.parquet import log_mel
-        feature=log_mel(wave,16000,device=device).transpose(0,1).unsqueeze(0)
-        with torch.no_grad(): output=model(feature,torch.tensor([feature.shape[1]],device=device))[0]
+        output=_chunked_model_output(wave,model,device,log_mel)
         return sp.decode(_decode(output.unsqueeze(0),sp.get_piece_size())[0])
     # Initialize CUDA kernels and feature path before listening.
     infer(np.zeros(16000,dtype=np.float32))

@@ -82,6 +82,8 @@ python -m dictate report
 
 This validates the stored shard hashes, starts a new stage from the previous stage's latest weights, uses a fresh optimizer and lower stage learning rate, and writes a separate graph under the new `runs/asr-NNN/` directory. A repeat stage disables replay mixing, since it already trains on the selected original shards. The app's global best checkpoint is replaced only if the new stage's dev WER improves on it. The command does not change files under `data/`. Use this only after reviewing the current dev score; more epochs can overfit and do not guarantee better WER. If you time-limit the repeated stage, resume it with both flags: `python -m dictate train asr --repeat-last-stage --resume`.
 
+To repeat all registered parquet shards currently present in `data/parquet/` as one stage, use `python -m dictate train asr --repeat-all-shards`. It verifies each file against its registered hash, starts from the latest ASR weights with a fresh optimizer, and disables replay mixing. If time-limited, resume with `--repeat-all-shards --resume`.
+
 ## Cleanup training
 
 Cleanup reads transcripts from registered speech shards and optional clean text under `data/text/`. Accepted text formats are `.txt` (one sentence per line), `.tsv`, `.csv`, and `.parquet` with a recognized text column. Punctuated clean text is useful for learning punctuation restoration.
@@ -106,6 +108,16 @@ The default hotkey is Right Ctrl. Hold it while speaking and release it to proce
 
 Cleanup defaults to `rules`. To use a trained cleanup model, set `app.cleanup: model` in `config/default.yaml`. If a cleanup checkpoint is missing, the app reports that and uses rules. If cleanup errors or changes output length beyond the 0.5 to 1.5 input ratio, the raw ASR text is used.
 
+## Test speech in the browser
+
+With the frozen tokenizer and `checkpoints/best-asr.pt` in place, start the local tester:
+
+```cmd
+python -m dictate web
+```
+
+Open the printed `http://127.0.0.1:8765` address, allow microphone access, then record and stop. The raw ASR result appears in an editable textbox. The page binds to localhost, processes WAV audio in memory, and does not save recordings or paste text into another app. Use `Ctrl+C` in the server window to stop it. Choose a different port with `python -m dictate web --port 9000`.
+
 ## Commands
 
 Run `python -m dictate --help` for the command list. Implemented commands:
@@ -117,6 +129,7 @@ Run `python -m dictate --help` for the command list. Implemented commands:
 | `python -m dictate train asr` | Train on all unconsumed ASR shards. |
 | `python -m dictate train asr --resume` | Resume an interrupted ASR stage exactly. |
 | `python -m dictate train asr --repeat-last-stage` | Start a new stage on the latest completed ASR stage's shards, initialized from its latest weights. |
+| `python -m dictate train asr --repeat-all-shards` | Start a new stage on every registered parquet file currently in `data/parquet/`, initialized from the latest ASR weights. |
 | `python -m dictate train asr --max-minutes N` | Save a resumable ASR checkpoint after the time limit is reached at a safe data boundary. |
 | `python -m dictate train cleanup` | Train cleanup on registered transcripts and optional clean text. |
 | `python -m dictate train cleanup --resume` | Resume an interrupted cleanup stage. |

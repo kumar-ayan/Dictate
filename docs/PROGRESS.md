@@ -38,11 +38,23 @@ The user then successfully evaluated all 126 rows: WER 0.9989, CER 0.9919, with 
 
 `README.md` has been rewritten as the quickstart, workflow, and command reference. Added root `explanation.md` with the data path, algorithms, model details, stage/checkpoint behavior, limitations, and current real-data status.
 
+## Phase 7 - browser speech tester
+
+Added `python -m dictate web [--port N]`, a localhost-only browser interface with a microphone record/stop control and editable raw-ASR textbox. Browser Web Audio captures PCM and packages it as WAV in memory; the local Python server decodes it and calls the existing ASR checkpoint. Audio and transcripts from this tester are not written to files or the registry, and nothing is pasted into another application. It uses only static HTML/CSS/JavaScript and Python standard-library HTTP serving. Verification: JavaScript syntax checks passed; 29 tests passed with two PyArrow deprecation warnings. The interface has not yet been exercised against a physical microphone/browser in this environment.
+
 After reviewing the real ASR metrics, found schedule estimation counted batches but did not divide by gradient accumulation. At step 14,708 the old run was still at LR 0.0004008 from a 0.0005 peak, so cosine decay was incomplete. Fixed the estimate and added `train asr --repeat-last-stage`, which checks recorded shard hashes and starts a separate stage from the latest weights with a fresh optimizer and lower peak LR. Repeated stages disable replay mixing and can be resumed with `--repeat-last-stage --resume`. The root best ASR checkpoint is only updated when dev WER improves. Latest suite: 23 passed, two PyArrow deprecation warnings. No second multi-hour training run has been started.
 
 ## Decisions and known limits
+
+- Added `train asr --repeat-all-shards` so a new stage can train across every registered parquet currently in `data/parquet/`, initialized from the latest weights. It validates scanned hashes, uses a fresh optimizer, disables replay mixing, and is resumable with the same flag plus `--resume`. It does not change the consumed status of existing shards until the stage finishes. Tests added for CLI parsing and shard selection.
+- Training exposed that the fixed dev manifest still references `train-00000-of-00082.parquet` after it was removed from `data/parquet/`. Added a preflight that stops before training when a fixed dev source is missing, and changed checkpoint selection/retention to use save time so stale high-step files cannot override newer low-step checkpoints in a reused stage directory. Recovery requires restoring the referenced parquet at its recorded path. Tests cover missing-dev preflight and checkpoint ordering.
+- Added a local browser ASR tester at `python -m dictate web`. It captures microphone PCM in the browser, posts a WAV payload to a loopback-only Python server, runs the existing local ASR checkpoint, and displays editable raw text. Captured audio is never written to disk and the page does not call a browser speech-recognition service. Added parser and in-memory audio-path tests.
 
 - Generated fixtures contain synthetic one-second audio and Hindi text for plumbing only; they cannot demonstrate ASR quality.
 - Replay/dev audio stays inside the source parquet. Manifests contain references and transcript text only, following the project data-safety rules.
 - Use the PyTorch models implemented here only. There are no pretrained weights or hosted model calls.
 - The required actual 8 GB training, real hardware, and user-data smoke runs remain unverified. The bounded sampler is deterministic but can use extra host RAM while decoding a pool of up to 128 clips.
+
+## Phase 8 - bounded ASR inference and checkpoint cleanup
+
+The 57.6M-parameter model's weights occupy about 220 MiB, but full-utterance self-attention uses memory proportional to the square of audio duration. Inference now processes overlapping 10-second windows, trims overlap logits, stitches them on CPU for CTC decoding, and uses BF16 autocast on CUDA. This bounds GPU activation memory independently of recording length. Added a regression test for 21-second input. Old optimizer/RNG snapshots in completed ASR stages are generated training state and can be removed while retaining each stage's best weights, all run records, and the active stage's resumable checkpoint.

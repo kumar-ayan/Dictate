@@ -107,6 +107,79 @@ def test_asr_cli_accepts_repeat_last_stage():
     args=parser().parse_args(["train","asr","--repeat-last-stage"])
     assert args.repeat_last_stage and not args.resume
 
+def test_asr_cli_accepts_repeat_all_shards():
+    from dictate.cli import parser
+    args=parser().parse_args(["train","asr","--repeat-all-shards"])
+    assert args.repeat_all_shards and not args.repeat_last_stage
+
+def test_cli_accepts_web_command_and_port():
+    from dictate.cli import parser
+    args=parser().parse_args(["web","--port","9000"])
+    assert args.command=="web" and args.port==9000
+
+def test_web_transcribes_decoded_audio_in_memory(monkeypatch):
+    import numpy as np
+    from dictate.app import web
+    from dictate.data import audio
+    from dictate.app import pipeline
+    wave=np.full(16000,.1,dtype=np.float32)
+    monkeypatch.setattr(audio,"decode_audio",lambda payload:(wave,16000))
+    monkeypatch.setattr(pipeline,"energy_trim",lambda value,**kwargs:value)
+    seen=[]
+    result=web._transcribe_payload(b"wav bytes",lambda value:seen.append(value.copy()) or "नमस्ते")
+    assert result["text"]=="नमस्ते"
+    assert result["seconds"]==1
+    assert len(seen)==1 and np.array_equal(seen[0],wave)
+
+def test_asr_inference_chunks_long_audio_to_bound_attention_memory():
+    import torch
+    from dictate.app.run import _chunked_model_output
+    class FakeModel:
+        def __init__(self): self.feature_lengths=[]
+        def __call__(self,features,lengths):
+            self.feature_lengths.append(features.shape[1])
+            return torch.zeros(1,(features.shape[1]+3)//4,5)
+    model=FakeModel()
+    wave=torch.zeros(21*16000)
+    def fake_log_mel(part,sample_rate,device): return torch.zeros(80,len(part)//160)
+    output=_chunked_model_output(wave,model,"cpu",fake_log_mel)
+    assert model.feature_lengths==[1000,1000,300]
+    assert max(model.feature_lengths)<=10*100
+    assert output.shape==(523,5)
+
+def test_repeat_all_selects_registered_parquet_files(tmp_path,monkeypatch):
+    import hashlib,sqlite3
+    import dictate.train.asr as asr
+    folder=tmp_path/"data"/"parquet"; folder.mkdir(parents=True)
+    paths=[folder/f"train-{i}.parquet" for i in range(4)]
+    for path in paths: path.write_bytes(path.name.encode())
+    db=sqlite3.connect(":memory:"); db.row_factory=sqlite3.Row
+    db.execute("CREATE TABLE shards(path TEXT, sha256 TEXT, name TEXT)")
+    for path in paths:
+        db.execute("INSERT INTO shards VALUES(?,?,?)",(str(path.resolve()),hashlib.sha256(path.read_bytes()).hexdigest(),path.name))
+    monkeypatch.setattr(asr,"ROOT",tmp_path)
+    selected=asr._all_registered_parquet_shards(db)
+    assert [row["name"] for row in selected]==[path.name for path in paths]
+
+def test_latest_checkpoint_uses_newest_save_time(tmp_path):
+    import os
+    from dictate.train.asr import _latest_checkpoint
+    old=tmp_path/"step-00007423.pt"; new=tmp_path/"step-00000000.pt"
+    old.touch(); new.touch()
+    os.utime(old,ns=(1_000_000_000,1_000_000_000))
+    os.utime(new,ns=(2_000_000_000,2_000_000_000))
+    assert _latest_checkpoint([old,new])==new
+
+def test_missing_fixed_dev_source_fails_clearly(tmp_path,monkeypatch):
+    import json
+    import dictate.train.asr as asr
+    dev=tmp_path/"data"/"dev"; dev.mkdir(parents=True)
+    missing=tmp_path/"data"/"parquet"/"missing.parquet"
+    (dev/"manifest.json").write_text(json.dumps({"rows":[{"path":str(missing)}]}),encoding="utf-8")
+    monkeypatch.setattr(asr,"ROOT",tmp_path)
+    with pytest.raises(SystemExit,match="missing.parquet"):
+        asr._validate_dev_manifest_sources()
+
 def test_asr_new_stage_preserves_global_best_checkpoint(tmp_path,monkeypatch):
     import torch
     import dictate.train.asr as asr

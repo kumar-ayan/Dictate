@@ -12,5 +12,8 @@ dependencies = ["torch", "torchaudio", "numpy", "pyarrow", "sentencepiece", "sou
 [tool.setuptools.packages.find]
 include = ["dictate*"]
 
+[tool.setuptools.package-data]
+"dictate.app" = ["web/*.html", "web/*.css", "web/*.js"]
+
 [tool.pytest.ini_options]
 pythonpath = ["."]

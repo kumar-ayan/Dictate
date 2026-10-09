@@ -10,10 +10,13 @@ def parser():
     tr=sub.add_parser("train").add_subparsers(dest="stage",required=True)
     for name in ("asr","cleanup"):
         q=tr.add_parser(name); q.add_argument("--resume",action="store_true"); q.add_argument("--max-minutes",type=float)
-        if name=="asr": q.add_argument("--repeat-last-stage",action="store_true",help="Train another stage on the latest completed ASR stage's shards")
+        if name=="asr":
+            repeat=q.add_mutually_exclusive_group()
+            repeat.add_argument("--repeat-last-stage",action="store_true",help="Train another stage on the latest completed ASR stage's shards")
+            repeat.add_argument("--repeat-all-shards",action="store_true",help="Train another stage on all registered parquet files currently under data/parquet")
     e=sub.add_parser("eval").add_subparsers(dest="stage",required=True); e.add_parser("asr"); e.add_parser("cleanup")
     r=sub.add_parser("replay").add_subparsers(dest="action",required=True); rb=r.add_parser("build"); rb.add_argument("shard",nargs="?"); rb.add_argument("--max-hours",type=float,default=3)
-    sub.add_parser("report"); sub.add_parser("run"); sub.add_parser("test"); sub.add_parser("fake-data")
+    sub.add_parser("report"); sub.add_parser("run"); web=sub.add_parser("web",help="Open the local browser dictation tester"); web.add_argument("--port",type=int,default=8765); sub.add_parser("test"); sub.add_parser("fake-data")
     return p
 
 def main(argv=None):
@@ -34,6 +37,9 @@ def main(argv=None):
     elif args.command=="run":
         from .app.run import run
         run(cfg)
+    elif args.command=="web":
+        from .app.web import run_web
+        run_web(cfg,port=args.port)
     elif args.command=="test":
         import pytest
         raise SystemExit(pytest.main([str(ROOT/"tests"),"-q"]))
@@ -41,10 +47,10 @@ def main(argv=None):
 def train_stage(args,cfg):
     from . import registry
     rows=registry.connect().execute(f"SELECT * FROM shards WHERE consumed_{args.stage}=0").fetchall()
-    if not rows and args.stage=="asr" and not args.repeat_last_stage: raise SystemExit("No unconsumed registered shards. Run data scan first, or use --repeat-last-stage for another pass over the previous ASR stage.")
+    if not rows and args.stage=="asr" and not (args.repeat_last_stage or args.repeat_all_shards): raise SystemExit("No unconsumed registered shards. Run data scan first, or use --repeat-last-stage / --repeat-all-shards for another pass over existing ASR data.")
     if args.stage=="asr":
         from .train.asr import train_asr
-        print(train_asr(cfg,resume=args.resume,max_minutes=args.max_minutes,repeat_last_stage=args.repeat_last_stage))
+        print(train_asr(cfg,resume=args.resume,max_minutes=args.max_minutes,repeat_last_stage=args.repeat_last_stage,repeat_all_shards=args.repeat_all_shards))
     else:
         from .cleanup.training import train_cleanup
         print(train_cleanup(cfg,resume=args.resume,max_minutes=args.max_minutes))

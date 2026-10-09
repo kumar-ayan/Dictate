@@ -101,6 +101,8 @@ When new unconsumed shards are scanned, a new ASR stage starts from the latest w
 
 With no new shards, plain `train asr` reports that there are no unconsumed shards. To deliberately repeat the most recently completed ASR stage's registered shards, run `python -m dictate train asr --repeat-last-stage`. This verifies the registered hashes and source files, creates a new stage, initializes from the previous stage's latest weights, and creates a fresh optimizer at the lower stage learning rate. Replay mixing is disabled for this stage because it already trains on the selected shards. Its plots live in a separate `runs/asr-NNN/` folder; `report` lists both stages. The global best checkpoint used by the app is replaced only if the new dev WER improves on the current global best. It does not edit data files. If a repeated stage is stopped with `--max-minutes`, resume it using both flags: `python -m dictate train asr --repeat-last-stage --resume`. Evaluate before repeating because another pass can overfit and does not guarantee better WER.
 
+To deliberately repeat all registered parquet files currently present in `data/parquet/` together, use `python -m dictate train asr --repeat-all-shards`. Each file must already be registered and match its scanned hash. This creates a new stage from the latest ASR weights with a fresh optimizer and no replay mixing. Resume a time-limited run with `--repeat-all-shards --resume`.
+
 Cleanup also tracks its consumed cleanup shards and creates new named stages. Interrupted ASR and cleanup jobs save resumable checkpoints. ASR saves at safe shuffle-pool boundaries, so `--max-minutes N` may run slightly beyond N minutes while it finishes its current pool.
 
 ## Dictation app

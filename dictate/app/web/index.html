@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f2e9">
+    <title>Speak and test · Nirmiti Dictate</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="masthead">
+        <a class="wordmark" href="/" aria-label="Nirmiti Dictate home">
+          <span class="wordmark-mark" aria-hidden="true">N</span>
+          <span>Nirmiti <span class="wordmark-light">Dictate</span></span>
+        </a>
+        <span class="local-tag"><span class="local-dot" aria-hidden="true"></span> Runs on this device</span>
+      </header>
+
+      <main class="tester">
+        <section class="intro" aria-labelledby="page-title">
+          <p class="eyebrow">Hindi speech test</p>
+          <h1 id="page-title">Speak, then edit.</h1>
+          <p class="intro-copy">Say a short phrase. Your local model will put its transcription right here.</p>
+        </section>
+
+        <section class="work-area" aria-label="Speech transcription tester">
+          <div class="record-row">
+            <button class="record-button" id="record-button" type="button" aria-pressed="false">
+              <svg class="mic-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="9" y="3" width="6" height="12" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3m-4 0h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              <span id="record-label">Start speaking</span>
+            </button>
+            <div class="record-meta">
+              <span class="state-mark" id="state-mark" aria-hidden="true"></span>
+              <span id="status" role="status" aria-live="polite">Your microphone starts when you press record.</span>
+              <span class="timer" id="timer" aria-label="Recording time">00:00</span>
+            </div>
+          </div>
+
+          <div class="transcript-heading">
+            <label for="transcript">Transcription</label>
+            <span id="result-meta" class="result-meta">Editable text</span>
+          </div>
+          <textarea id="transcript" rows="7" spellcheck="true" placeholder="Your words will appear here…" aria-describedby="privacy-note"></textarea>
+          <p class="privacy-note" id="privacy-note">Audio is processed locally in memory and discarded after transcription. Nothing is pasted automatically.</p>
+        </section>
+      </main>
+
+      <footer class="page-footer">
+        <span>From-scratch Hindi ASR</span>
+        <span id="model-time"></span>
+      </footer>
+    </div>
+  </body>
+</html>

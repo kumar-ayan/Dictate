@@ -56,12 +56,26 @@ def _edit_distance(a,b):
         prev=curr
     return prev[-1]
 
+def _latest_checkpoint(paths):
+    paths=list(paths)
+    return max(paths,key=lambda path:(path.stat().st_mtime_ns,path.name)) if paths else None
+
+def _validate_dev_manifest_sources():
+    manifest_path=ROOT/"data/dev"/"manifest.json"
+    if not manifest_path.exists(): return
+    refs=json.loads(manifest_path.read_text(encoding="utf-8")).get("rows",[])
+    missing=sorted({ref["path"] for ref in refs if not Path(ref["path"]).is_file()})
+    if missing:
+        names=", ".join(Path(path).name for path in missing)
+        raise SystemExit(f"Fixed dev set references missing parquet file(s): {names}. Restore the original file(s) at their recorded paths; the fixed dev set cannot be rebuilt during training.")
+
 def _evaluate_dev(model, sp, device):
     import pyarrow.parquet as pq
     manifest_path=ROOT/"data/dev"/"manifest.json"
     if not manifest_path.exists(): return None
     manifest=json.loads(manifest_path.read_text(encoding="utf-8")); refs=manifest.get("rows",[])
     if not refs: return None
+    _validate_dev_manifest_sources()
     groups={}
     for ref in refs: groups.setdefault((ref["path"],ref["row_group"],ref["audio_column"]),[]).append(ref)
     words=chars=wer_edits=cer_edits=examples=0; samples=[]; failures=[]; skipped=0; model.eval()
@@ -97,7 +111,7 @@ def _save_training_state(directory,state,step,param_count):
     path=Path(directory)/f"step-{step:08d}.pt"; size=param_count*16
     disk_guard(path,needed_bytes=size,reserve_bytes=500_000_000)
     temp=path.with_suffix(".tmp"); torch.save(state,temp); temp.replace(path)
-    checkpoints=sorted(Path(directory).glob("step-*.pt"),reverse=True)
+    checkpoints=sorted(Path(directory).glob("step-*.pt"),key=lambda p:(p.stat().st_mtime_ns,p.name),reverse=True)
     for old in checkpoints[3:]: old.unlink()
     return path
 
@@ -139,6 +153,21 @@ def _estimate_optimizer_steps(shards,max_seconds,epochs,grad_accum,replay_fracti
 def _stage_replay_fraction(config,stage_no,repeat_last_stage=False):
     if stage_no<=1 or repeat_last_stage: return 0.
     return float(config["data"].get("replay_fraction",.15))
+
+def _all_registered_parquet_shards(db):
+    from ..data.parquet import hash_file
+    folder=ROOT/"data/parquet"
+    rows=db.execute("SELECT * FROM shards ORDER BY name").fetchall()
+    by_path={Path(row["path"]).resolve():row for row in rows}
+    files=sorted(folder.glob("*.parquet"))
+    if not files: raise SystemExit("No parquet shards found under data/parquet.")
+    selected=[]
+    for path in files:
+        shard=by_path.get(path.resolve())
+        if shard is None: raise SystemExit(f"{path.name} is not registered. Run data scan first.")
+        if hash_file(path)!=shard["sha256"]: raise SystemExit(f"{path.name} changed since data scan. Run data scan before repeating all shards.")
+        selected.append(shard)
+    return selected
 
 def _replay_refs():
     refs=[]
@@ -229,14 +258,17 @@ def _batches(shards,sp,device,max_seconds,start=None,replay_fraction=0.,seed=172
                 yield from flush_pool()
         yield from flush_pool()
 
-def train_asr(config,resume=False,max_minutes=None,repeat_last_stage=False):
+def train_asr(config,resume=False,max_minutes=None,repeat_last_stage=False,repeat_all_shards=False):
     from ..data.parquet import initialize_dev_set
     from ..asr.model import ConformerCTC
     from ..tokenizer import load
     initialize_dev_set(config["data"].get("dev_max_hours",2),config["data"].get("dev_fraction",.03))
+    _validate_dev_manifest_sources()
     db=registry.connect()
     completed_count=db.execute("SELECT COUNT(*) FROM stages WHERE kind='asr'").fetchone()[0]
-    if repeat_last_stage:
+    if repeat_all_shards:
+        shards=_all_registered_parquet_shards(db)
+    elif repeat_last_stage:
         if completed_count<1: raise SystemExit("No completed ASR stage exists to repeat.")
         previous_name=f"asr-{completed_count:03d}"
         previous_row=db.execute("SELECT record_json FROM stages WHERE name=? AND kind='asr'",(previous_name,)).fetchone()
@@ -265,9 +297,9 @@ def train_asr(config,resume=False,max_minutes=None,repeat_last_stage=False):
     stage_no=1+completed_count
     if stage_no>1:
         previous=ROOT/"checkpoints"/f"asr-{stage_no-1:03d}"
-        previous_steps=sorted(previous.glob("step-*.pt"),reverse=True)
-        if previous_steps:
-            previous_state=torch.load(previous_steps[0],map_location=device,weights_only=False); model.load_state_dict(previous_state["model"])
+        previous_checkpoint=_latest_checkpoint(previous.glob("step-*.pt"))
+        if previous_checkpoint:
+            previous_state=torch.load(previous_checkpoint,map_location=device,weights_only=False); model.load_state_dict(previous_state["model"])
         elif (previous/"best.pt").exists():
             previous_state=torch.load(previous/"best.pt",map_location=device,weights_only=False); model.load_state_dict(previous_state["model"])
     stage=f"asr-{stage_no:03d}"; run_dir=ROOT/"runs"/stage; ckpt_dir=ROOT/"checkpoints"/stage
@@ -279,7 +311,7 @@ def train_asr(config,resume=False,max_minutes=None,repeat_last_stage=False):
     optimizer=torch.optim.AdamW(model.parameters(),lr=peak_lr)
     epochs=int(cfg.get("epochs",1)); budget=max(1,int(config["data"].get("max_batch_seconds",20)))
     accum=max(1,int(cfg.get("grad_accum",1)))
-    replay_mix=_stage_replay_fraction(config,stage_no,repeat_last_stage)
+    replay_mix=_stage_replay_fraction(config,stage_no,repeat_last_stage or repeat_all_shards)
     estimated=_estimate_optimizer_steps(shards,budget,epochs,accum,replay_mix)
     warmup=max(1,int(cfg.get("warmup_steps",1000))); total=max(warmup+1,estimated)
     def lr_scale(n):
@@ -287,8 +319,7 @@ def train_asr(config,resume=False,max_minutes=None,repeat_last_stage=False):
         return .5*(1+math.cos(math.pi*min(1.,(n-warmup)/(total-warmup))))
     scheduler=torch.optim.lr_scheduler.LambdaLR(optimizer,lr_scale)
     scaler=torch.amp.GradScaler("cuda",enabled=False)
-    checkpoint_files=sorted(ckpt_dir.glob("step-*.pt"),reverse=True)
-    state_path=checkpoint_files[0] if checkpoint_files else None
+    state_path=_latest_checkpoint(ckpt_dir.glob("step-*.pt"))
     step=0; start_state=None; best_wer=float("inf"); last_loss=None; saved_gradients={}; saved_accumulated=0
     if resume:
         if state_path is None: raise SystemExit("No ASR checkpoint to resume.")
